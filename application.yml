@@ -1,0 +1,13 @@
+spring:
+  application:
+    # Đồng bộ chữ thường và dùng gạch ngang (kebab-case) cho nhất quán
+    name: restaurant-service
+
+eureka:
+  client:
+    # Bổ sung rõ ràng cấu hình đăng ký và lấy danh sách (mặc định là true, nhưng nên ghi rõ cho dễ bảo trì)
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      # Sửa lỗi thiếu dấu / ở cuối URL để Jersey client ghép nối API chính xác
+      defaultZone: http://eureka-server:8761/eureka/
